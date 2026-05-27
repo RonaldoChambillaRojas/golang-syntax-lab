@@ -15,7 +15,11 @@ func main() {
 	//
 	// Imprime los tres valores con un solo fmt.Println.
 
-	// TODO
+	nombre := "Ronaldo"
+	edad := 20
+	altura := 1.68
+
+	fmt.Println(nombre, edad, altura)
 
 	// EJERCICIO 2 — Intermedio ─────────────────────────────────
 	//
@@ -27,5 +31,14 @@ func main() {
 	//    intercambia precio y precioFinal.
 	// 4. Imprime ambos valores después del intercambio.
 
-	// TODO
+	precio := 250.0
+	descuento := 15.0
+
+	precio_final := precio - (precio * descuento / 100)
+
+	fmt.Println("Precio final: ", precio_final)
+
+	precio_final, precio = precio, precio_final
+
+	fmt.Println(precio, precio_final)
 }
