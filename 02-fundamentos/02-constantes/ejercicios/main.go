@@ -13,26 +13,47 @@ func main() {
 	// Calcula la circunferencia: 2 * Pi * radio
 	// Imprime ambos resultados con un mensaje descriptivo.
 
-	// TODO
+	const Pi = 3.14159
+	var radio = 7.0
+
+	area := Pi * radio * radio
+	circunferencia := 2 * Pi * radio
+
+	fmt.Printf("Área del círculo con radio %.2f: %.5f\n", radio, area)
+	fmt.Printf("Circunferencia del círculo con radio %.2f: %.5f\n", radio, circunferencia)
 
 	// EJERCICIO 2 — Intermedio ─────────────────────────────────
-	//
-	// Crea un tipo Talla basado en int y usando iota define:
-	//   XS = 1, S = 2, M = 3, L = 4, XL = 5
-	//
-	// Declara una variable talla := M
-	// Usando un switch (lo veremos más adelante, prueba esto):
-	//
-	//   switch talla {
-	//   case XS: fmt.Println("Extra small")
-	//   case S:  fmt.Println("Small")
-	//   case M:  fmt.Println("Medium")
-	//   case L:  fmt.Println("Large")
-	//   case XL: fmt.Println("Extra large")
-	//   }
-	//
-	// Nota: el objetivo aquí es practicar iota, no switch.
-	// Verifica que los valores de iota sean correctos imprimiéndolos.
+	// Definimos un tipo Talla basado en int y usamos iota para generar
+	// constantes consecutivas. Como queremos que XS valga 1, usamos iota+1.
+	type Talla int
 
-	// TODO
+	const (
+		XS Talla = iota + 1
+		S
+		M
+		L
+		XL
+	)
+
+	talla := M
+
+	fmt.Println("\nValores de Talla usando iota:") // mostramos los valores calculados
+	fmt.Println("XS =", XS)
+	fmt.Println("S  =", S)
+	fmt.Println("M  =", M)
+	fmt.Println("L  =", L)
+	fmt.Println("XL =", XL)
+
+	switch talla {
+	case XS:
+		fmt.Println("Talla seleccionada: Extra small")
+	case S:
+		fmt.Println("Talla seleccionada: Small")
+	case M:
+		fmt.Println("Talla seleccionada: Medium")
+	case L:
+		fmt.Println("Talla seleccionada: Large")
+	case XL:
+		fmt.Println("Talla seleccionada: Extra large")
+	}
 }
